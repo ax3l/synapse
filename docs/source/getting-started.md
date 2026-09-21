@@ -58,6 +58,7 @@ From {repo-dir}`dashboard/`, launch {repo}`app.py <dashboard/app.py>`:
 :sync: general
 
 ```bash
+conda activate base
 conda-lock install --name synapse-gui environment-lock.yml
 conda activate synapse-gui
 export <database.password_ro_env>='...'
@@ -70,6 +71,7 @@ python -u app.py --port 8080
 :sync: bella-nersc
 
 ```bash
+conda activate base
 conda-lock install --name synapse-gui environment-lock.yml
 conda activate synapse-gui
 export SF_DB_READONLY_PASSWORD='...'
@@ -96,6 +98,7 @@ From {repo-dir}`ml/`, run {repo}`train_model.py <ml/train_model.py>`:
 :sync: general
 
 ```bash
+conda activate base
 conda-lock install --name synapse-ml environment-lock.yml
 conda activate synapse-ml
 export <database.password_ro_env>='...'
@@ -108,6 +111,7 @@ python train_model.py --test --config_file ../experiments/synapse-<experiment>/c
 :sync: bella-nersc
 
 ```bash
+conda activate base
 conda-lock install --name synapse-ml environment-lock.yml
 conda activate synapse-ml
 export SF_DB_READONLY_PASSWORD='...'
