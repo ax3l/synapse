@@ -49,7 +49,7 @@ ssh -L 27017:mongodb05.nersc.gov:27017 <username>@dtn03.nersc.gov -N
 
 Then set `database.host` to `127.0.0.1` in your local copy of `config.yaml`, and do not commit this change.
 
-From {repo-dir}`dashboard/`, launch {repo}`app.py <dashboard/app.py>`:
+Assuming `conda-lock` is installed in your conda `base` environment, from {repo-dir}`dashboard/` launch {repo}`app.py <dashboard/app.py>`:
 
 ::::{tab-set}
 :sync-group: deployment
@@ -84,12 +84,12 @@ python -u app.py --port 8080
 ## Train a model
 
 Training requires an experiment configuration.
-Experiment configs are not part of this repository: clone the private repository for your experiment into {repo-dir}`experiments/` first, so that `experiments/synapse-<experiment>/config.yaml` exists.
+Experiment configurations are not part of this repository: clone the private repository for your experiment into {repo-dir}`experiments/` first, so that `experiments/synapse-<experiment>/config.yaml` exists.
 See [Experiment configuration](experiment-configuration.md) for the expected layout.
 If `database.port` is not `27017` and you access the database through a gateway, open a separate tunnel for training with local port `27017`: `ssh -L 27017:<database.host>:<database.port> <username>@<gateway_host> -N`.
 Unlike the dashboard, {repo}`train_model.py <ml/train_model.py>` does not read `database.port` yet and always connects to the default MongoDB port.
 
-From {repo-dir}`ml/`, run {repo}`train_model.py <ml/train_model.py>`:
+Assuming `conda-lock` is installed in your conda `base` environment, from {repo-dir}`ml/` run {repo}`train_model.py <ml/train_model.py>`:
 
 ::::{tab-set}
 :sync-group: deployment

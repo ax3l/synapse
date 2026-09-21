@@ -1,6 +1,6 @@
 # Deployment
 
-Synapse is deployed using Docker images and NERSC services.
+Synapse is currently deployed using Docker images and NERSC services.
 
 ## Build the dashboard image
 
