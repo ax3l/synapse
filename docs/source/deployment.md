@@ -33,7 +33,7 @@ python publish_container.py --gui --ml
 ## NERSC deployment assumptions
 
 - Dashboard runs on Spin.
-- Training and simulations run on Perlmutter through Superfacility API.
+- Training and simulations run on Perlmutter through Genesis AmSC IRI API or NERSC Superfacility API.
 - Images are pushed to the registry of the deployment's NERSC project:
 
   ::::{tab-set}

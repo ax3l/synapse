@@ -251,7 +251,7 @@ The dashboard has three routes, reachable from the navigation drawer:
   The `Parameters` tab holds the displayed output selector, the input parameter controls, and the plot depth control.
   The `Optimization` tab holds the optimization controls.
   The `ML` tab holds the model controls and the calibration controls.
-- `/hpc` ("HPC Connection"): NERSC Superfacility API credential and Perlmutter status panel.
+- `/hpc` ("HPC Connection"): Genesis AmSC IRI API or NERSC Superfacility API credential and HPC status panel.
 - `/chat` ("AI Assistant"): embedded assistant for experiment support.
   It loads [synapse-chat.lbl.gov](https://synapse-chat.lbl.gov/), which is hardcoded in {repo}`dashboard/app.py`.
 
