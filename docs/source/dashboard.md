@@ -38,7 +38,7 @@ conda-lock install --name synapse-gui environment-lock.yml
 
 #### Run the dashboard
 
-1. In a separate terminal, create an SSH tunnel to the MongoDB database through a gateway node, using `database.host` and `database.port` from your experiment's `config.yaml`:
+1. If the computer running the dashboard cannot directly reach the host specified by `database.host`, create an SSH tunnel to the MongoDB database through a gateway node in a separate terminal, using `database.host` and `database.port` from your experiment's `config.yaml`:
 
    ::::{tab-set}
    :sync-group: deployment
@@ -60,8 +60,7 @@ conda-lock install --name synapse-gui environment-lock.yml
    :::
    ::::
 
-2. Set `database.host` to `127.0.0.1` in your local copy of `config.yaml`, so that the dashboard connects through the tunnel.
-   Do not commit this change.
+2. If you created the SSH tunnel, set `database.host` to `127.0.0.1` in your local copy of `config.yaml`, so that the dashboard connects through it, but do not commit this change.
    ```yaml
    database:
      host: "127.0.0.1"
@@ -107,7 +106,7 @@ conda-lock install --name synapse-gui environment-lock.yml
 
 #### Run the container
 
-1. In a separate terminal, create an SSH tunnel to the MongoDB database through a gateway node, using `database.host` and `database.port` from your experiment's `config.yaml`:
+1. If the computer running the dashboard cannot directly reach the host specified by `database.host`, create an SSH tunnel to the MongoDB database through a gateway node in a separate terminal, using `database.host` and `database.port` from your experiment's `config.yaml`:
 
    ::::{tab-set}
    :sync-group: deployment
@@ -129,9 +128,8 @@ conda-lock install --name synapse-gui environment-lock.yml
    :::
    ::::
 
-2. Set `database.host` to `127.0.0.1` in your local copy of `config.yaml`.
+2. If you created the SSH tunnel, set `database.host` to `127.0.0.1` in your local copy of `config.yaml`, but do not commit this change.
    Do this before building the image, because {repo}`dashboard.Dockerfile` copies {repo-dir}`experiments/` into it.
-   Do not commit this change.
 
 3. Move to the root directory of the repository.
 

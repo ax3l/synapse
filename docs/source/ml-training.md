@@ -36,7 +36,7 @@ This section describes how to train ML models locally.
 
 #### Run the training
 
-1. In a separate terminal, create an SSH tunnel to the MongoDB database through a gateway node, using `database.host` and `database.port` from your experiment's `config.yaml`:
+1. If the computer running the training cannot directly reach the host specified by `database.host`, create an SSH tunnel to the MongoDB database through a gateway node in a separate terminal, using `database.host` and `database.port` from your experiment's `config.yaml`:
 
    ::::{tab-set}
    :sync-group: deployment
@@ -62,8 +62,7 @@ This section describes how to train ML models locally.
    The local port is 27017 because {repo}`train_model.py <ml/train_model.py>` does not read `database.port` yet and always connects to the default MongoDB port.
    ```
 
-2. Set `database.host` to `127.0.0.1` in your local copy of `config.yaml`, so that the training connects through the tunnel.
-   Do not commit this change.
+2. If you created the SSH tunnel, set `database.host` to `127.0.0.1` in your local copy of `config.yaml`, so that the training connects through it, but do not commit this change.
    ```yaml
    database:
      host: "127.0.0.1"

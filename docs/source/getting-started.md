@@ -25,7 +25,7 @@ Other projects use their own.
 ## Run the dashboard
 
 The dashboard reads the MongoDB connection settings from the `database` section of your experiment's `config.yaml`.
-If the database is only reachable through a gateway node, first open an SSH tunnel in a separate terminal:
+If the computer running the dashboard cannot directly reach the host specified by `database.host`, open an SSH tunnel to the MongoDB database through a gateway node in a separate terminal:
 
 ::::{tab-set}
 :sync-group: deployment
@@ -47,7 +47,7 @@ ssh -L 27017:mongodb05.nersc.gov:27017 <username>@dtn03.nersc.gov -N
 :::
 ::::
 
-Then set `database.host` to `127.0.0.1` in your local copy of `config.yaml`, and do not commit this change.
+If you created the SSH tunnel, set `database.host` to `127.0.0.1` in your local copy of `config.yaml`, but do not commit this change.
 
 Assuming `conda-lock` is installed in your conda `base` environment, from {repo-dir}`dashboard/` launch {repo}`app.py <dashboard/app.py>`:
 
