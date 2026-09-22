@@ -1,6 +1,8 @@
 # Deployment
 
-Synapse is currently deployed using Docker images and NERSC services.
+Synapse is typically deployed using Docker images, e.g., on Kubernetes.
+
+Below, we document our public deployment workflow (recipes currently in a `private repo <https://github.com/BLAST-AI-ML/synapse-kubernetes-nersc>`__) using NERSC services like `Spin <https://docs.nersc.gov/services/spin/>`__.
 
 ## Build the dashboard image
 
